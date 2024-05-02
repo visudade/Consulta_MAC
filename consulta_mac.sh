@@ -17,6 +17,12 @@ while IFS= read -r linha || [ -n "$linha" ]; do
     # Remove espaços em branco extras
     linha=$(echo "$linha" | tr -d '[:space:]')
     
+    # Verifica se o formato é parecido com endereço MAC válido
+    echo "$linha" | grep -qE "^([0-9A-Fa-f]{2}:){5}([0-9A-Fa-f]{2})$" || {
+        echo "Endereço MAC inválido: $linha"
+        continue
+    }
+    
     # Monta a URL com o valor lido do arquivo
     url="https://api.macvendors.com/$linha"
     
