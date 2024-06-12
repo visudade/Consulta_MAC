@@ -4,6 +4,7 @@ Consulta uma lista de MACs para visualizar o Vendor
 Uso da ferramenta:
 
 <code > sh ./consulta_mac.sh arquivo_de_entrada.txt </code>
+*  <b>Obs:</b> O arquivo que contêm os endereços para consulta devem ter um endereço por linha.
 
 Resultado esperado da consulta:
 
